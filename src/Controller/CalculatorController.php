@@ -13,6 +13,8 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class CalculatorController extends AbstractController
 {
+    public const VERSION = '1.0.0';
+
     public function __construct(private CalculatorService $calculatorService)
     {
     }
@@ -27,6 +29,7 @@ class CalculatorController extends AbstractController
         }
         return $this->json([
                 'operation' => 'sum',
+                'version' => self::VERSION,
                 'result' => $this->calculatorService->sum($request->get('number1'), $request->get('number2'))]
         );
     }
@@ -48,6 +51,7 @@ class CalculatorController extends AbstractController
 
         return $this->json([
             'operation' => $action,
+            'version' => self::VERSION,
             'result' => $this->calculatorService->{$action}($number1, $number2)
         ]);
     }
