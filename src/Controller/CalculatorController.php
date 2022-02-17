@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class CalculatorController extends AbstractController
 {
-    public const VERSION = '1.0.0';
+    public const VERSION = '1.0.1';
 
     public function __construct(private CalculatorService $calculatorService)
     {
