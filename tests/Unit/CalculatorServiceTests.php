@@ -9,6 +9,7 @@ class CalculatorServiceTests extends KernelTestCase
 {
     private CalculatorService $calculatorService;
 
+
     protected function setUp(): void
     {
         $this->calculatorService = new CalculatorService();
@@ -19,8 +20,7 @@ class CalculatorServiceTests extends KernelTestCase
      */
     public function shouldReturnCorrectSumAction()
     {
-        /** @var CalculatorService $calculatorService */
-        $this->assertEquals(15, $this->calculatorService->sum(10, 5));
+        $this->assertTrue( 10 == $this->calculatorService->sum(2,8));
     }
 
     /**
